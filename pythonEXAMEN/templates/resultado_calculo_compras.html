@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado Calculo de Compras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado Calculo de Compras</h1>
+        <p>Nombre: {{ nombre }}</p>
+        <p>Edad: {{ edad }}</p>
+        <p>Cantidad de Tarros de Pintura a Comprar: {{ cantidad_tarros }}</p>
+        <p>Total sin Descuento: ${{ costo_total_sin_descuento }}</p>
+
+        {% if descuento > 0 %}
+            <p>Descuento aplicado: {{ descuento * 100 }}%</p>
+            <p>Total con Descuento: ${{ costo_total_con_descuento }}</p>
+        {% else %}
+            <p>No hay descuento aplicado.</p>
+        {% endif %}
+
+    </div>
+</body>
+</html>
